@@ -3,7 +3,11 @@
     let countries; //will contain 'fetched data'
 
     // Event Listeners
-   countriesList.addEventListener('change' ,event  => displayCountryInfo(event.target.value));
+   countriesList.addEventListener('change' ,newCountrySelection);
+
+   function newCountrySelection(event){
+       displayCountryInfo(event.target.value);
+   }
     // fetch("https://restcountries.eu/rest/v2/all")
     // .then(function(res) {
     //     // console.log(res);
@@ -37,7 +41,7 @@
     }
     function displayCountryInfo(countryByAlpha3Code) {
         const countryData  = countries.find(country=> country.alpha3Code ===countryByAlpha3Code);
-        console.log(countryData);
+        // console.log(countryData);
         document.querySelector('#flag-container img').src = countryData.flag;
         document.querySelector('#flag-container img').alt = `flag of ${countryData.name}`;
         document.getElementById('capital').innerHTML = countryData.capital;
