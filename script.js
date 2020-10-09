@@ -3,10 +3,7 @@
     let countries; //will contain 'fetched data'
 
     // Event Listeners
-   countriesList.addEventListener('change' ,function (event) {
-       // console.log(event.target.value);
-       displayCountryInfo(event.target.value);
-   });
+   countriesList.addEventListener('change' ,event  => displayCountryInfo(event.target.value));
     // fetch("https://restcountries.eu/rest/v2/all")
     // .then(function(res) {
     //     // console.log(res);
